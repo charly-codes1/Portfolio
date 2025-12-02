@@ -1,7 +1,7 @@
 import { FIREBASE_CONFIG } from '@/constans/common'
-import { getApp, getApps, initializeApp, FirebaseApp } from 'firebase/app'
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, Auth } from 'firebase/auth'
-import { getFirestore, Firestore } from 'firebase/firestore'
+import { FirebaseApp, getApp, getApps, initializeApp } from 'firebase/app'
+import { Auth, GithubAuthProvider, GoogleAuthProvider, getAuth } from 'firebase/auth'
+import { Firestore, getFirestore } from 'firebase/firestore'
 
 // Only initialize Firebase if an API key is provided (prevents build-time failures on Vercel when env vars are missing)
 const hasFirebaseConfig = Boolean(FIREBASE_CONFIG?.apiKey)
