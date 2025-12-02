@@ -1,4 +1,4 @@
-import { FiBookOpen, FiClipboard, FiGlobe, FiHome, FiMail, FiUser } from 'react-icons/fi'
+import { FiClipboard, FiHome, FiMail, FiUser } from 'react-icons/fi'
 
 export const HOST = process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000'
 

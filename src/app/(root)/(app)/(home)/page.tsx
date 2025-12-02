@@ -1,5 +1,5 @@
 import { SOCIALS } from '@/constans/common'
-import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 
 export const dynamic = 'force-dynamic'
 
@@ -12,10 +12,10 @@ export default function HomePage() {
             <span className="block text-center text-sm opacity-90">I AM</span>
           </span>{' '}
           <span className="grid grid-cols-2 justify-items-end">
-          <span className=" z-10 block text-[calc(1.825rem+6.9vw)] font-bold leading-none">Oluwaseun Bamgbala</span>{' '}
+            <span className=" z-10 block text-[calc(1.825rem+6.9vw)] font-bold leading-none">Oluwaseun Bamgbala</span>{' '}
             <span className="block"></span>
             <span className="block text-sm opacity-90">
-              A FRONT-END 
+              A FRONT-END
               <br /> DEVELOPER
             </span>
           </span>

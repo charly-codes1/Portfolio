@@ -30,14 +30,15 @@ export default function AboutPage() {
           <h2 className="mb-2 text-xl font-bold">I’m Oluwaseun Bamgbala </h2>
           <div className="mb-6">
             <p className="mb-1">
-              Front-End  Developer based in Nigeria, Abuja. <br />As a Frontend and React Developer, I focus on writing code that’s clean, readable, and easy for anyone to build upon.
+              Front-End Developer based in Nigeria, Abuja. <br />
+              As a Frontend and React Developer, I focus on writing code that’s clean, readable, and easy for anyone to build upon.
             </p>
           </div>
           <h2 className="mb-2 text-xl font-bold">EXPEREINCE</h2>
           <div className="mb-6">
             <p className="mb-1">
-            I have over 6 years of experience building numerous websites and web applications that always met the requirements of my clients.
-  
+              I have over 6 years of experience building numerous websites and web applications that always met the requirements of my
+              clients.
             </p>
           </div>
           <h2 className="mb-2 text-xl font-bold">Tech Stack</h2>
