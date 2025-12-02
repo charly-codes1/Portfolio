@@ -1,13 +1,22 @@
 import { FIREBASE_CONFIG } from '@/constans/common'
-import { getApp, getApps, initializeApp } from 'firebase/app'
-import { GithubAuthProvider, GoogleAuthProvider, getAuth } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import { getApp, getApps, initializeApp, FirebaseApp } from 'firebase/app'
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, Auth } from 'firebase/auth'
+import { getFirestore, Firestore } from 'firebase/firestore'
 
-export const app = getApps().length > 0 ? getApp() : initializeApp(FIREBASE_CONFIG)
+// Only initialize Firebase if an API key is provided (prevents build-time failures on Vercel when env vars are missing)
+const hasFirebaseConfig = Boolean(FIREBASE_CONFIG?.apiKey)
 
-export const auth = getAuth(app)
+let app: FirebaseApp | null = null
+let auth: Auth | null = null
+let db: Firestore | null = null
 
-export const db = getFirestore(app)
+if (hasFirebaseConfig) {
+  app = getApps().length > 0 ? getApp() : initializeApp(FIREBASE_CONFIG)
+  auth = getAuth(app)
+  db = getFirestore(app)
+}
+
+export { app, auth, db }
 
 export const getProviderById = (id: 'github.com' | 'google.com') => {
   switch (id) {
