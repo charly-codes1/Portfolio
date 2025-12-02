@@ -28,12 +28,12 @@ export const RESUME_URL = 'https://docs.google.com/document/d/1txdRuu4d22rn4vN0T
 export const FORMSPREE_KEY = process.env.NEXT_PUBLIC_FORMSPREE_KEY || 'xzzqerqz'
 
 export const FIREBASE_CONFIG = {
-  apiKey: 'AIzaSyCVXW6MTdRVtYPTOoV92ruBQ3ZQcF5Ho0g',
-  authDomain: 'dede-ard.firebaseapp.com',
-  databaseURL: 'https://dede-ard.firebaseio.com',
-  projectId: 'dede-ard',
-  storageBucket: 'dede-ard.appspot.com',
-  messagingSenderId: '120930847292',
-  appId: '1:120930847292:web:eb77034f59e9ee37b65139',
-  measurementId: 'G-KJRFL3X06T',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || '',
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || '',
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL || '',
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || '',
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || '',
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '',
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '',
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || '',
 }
