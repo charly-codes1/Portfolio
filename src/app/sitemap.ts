@@ -1,9 +1,9 @@
-import { getBlogPosts } from '@/utils/get-blog-posts'
+import { getPosts } from '@/utils/get-blog-posts'
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dedeard.my.id'
-  const posts = getBlogPosts()
+  const posts = getPosts()
 
   const staticRoutes = [
     {
