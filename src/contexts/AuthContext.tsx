@@ -28,6 +28,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [error, setError] = React.useState('')
 
   React.useEffect(() => {
+    if (!auth) {
+      // Firebase not initialized (missing env vars) — skip auth listener
+      setIsInitLoading(false)
+      return
+    }
+
     return onAuthStateChanged(auth, (user) => {
       setUser(user)
       setIsInitLoading(false)
@@ -35,6 +41,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [])
 
   const login = async (id: 'github.com' | 'google.com') => {
+    if (!auth) {
+      setError('Firebase not initialized')
+      return
+    }
+
     setIsAuthLoading(true)
     setError('')
 
@@ -48,6 +59,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   const logout = async () => {
+    if (!auth) {
+      setError('Firebase not initialized')
+      return
+    }
+
     setIsAuthLoading(true)
     setError('')
 
