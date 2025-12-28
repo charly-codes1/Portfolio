@@ -256,27 +256,30 @@
 
         folioLinks.forEach(function(link) {
             let modalbox = link.getAttribute('href');
-            let instance = basicLightbox.create(
-                document.querySelector(modalbox), {
-                    onShow: function(instance) {
-                        //detect Escape key press
-                        document.addEventListener("keydown", function(event) {
-                            event = event || window.event;
-                            if (event.keyCode === 27) {
-                                instance.close();
-                            }
-                        });
+            
+            // Only create lightbox for internal links (starting with #)
+            if (modalbox && modalbox.startsWith('#')) {
+                let instance = basicLightbox.create(
+                    document.querySelector(modalbox), {
+                        onShow: function(instance) {
+                            //detect Escape key press
+                            document.addEventListener("keydown", function(event) {
+                                event = event || window.event;
+                                if (event.keyCode === 27) {
+                                    instance.close();
+                                }
+                            });
+                        }
                     }
-                }
-            )
-            modals.push(instance);
-        });
-
-        folioLinks.forEach(function(link, index) {
-            link.addEventListener("click", function(event) {
-                event.preventDefault();
-                modals[index].show();
-            });
+                )
+                modals.push(instance);
+                
+                // Only attach click event if it's a lightbox link
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    instance.show();
+                });
+            }
         });
 
     }; // end ssLightbox
